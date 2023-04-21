@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var button: Button
 
     private lateinit var nombre: String
-    private lateinit var nacion: String
+    private var nacion: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,10 +53,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         button.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("name", nombre)
-            intent.putExtra("nacionalidad", nacion)
-            startActivity(intent)
+
+            if (nacion != null) {
+                val intent = Intent(this, SecondActivity::class.java)
+                intent.putExtra("name", nombre)
+                intent.putExtra("nacionalidad", nacion)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "debe seleccionar una nacion", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
