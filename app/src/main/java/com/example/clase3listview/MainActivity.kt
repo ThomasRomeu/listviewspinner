@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         listView = findViewById(R.id.listView)
         button = findViewById(R.id.button)
 
-        val nombres = listOf("Ludmila", "Lorena", "Luciano", "Tomas", "Carolina", "Juancito")
+        val nombres = listOf("Ludmila", "Thomas", "Gianluca", "Joaquin", "Gustavo", "Karina")
 
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, nombres)
